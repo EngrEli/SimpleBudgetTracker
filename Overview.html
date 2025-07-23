@@ -5,34 +5,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Overview</title>
         <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="modal.css" />
         <!-- Typescript -->
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
     <body>
         <div class="text-3xl font-bold underline">
-            Simple expense trackertest
+            Simple expense trackerwew
         </div>
         <!-- Income List Section -->
         <div>
             <h3>Income</h3>
-            <div>P3000</div>
+            <div id="income-total">Total: 0</div>
+            <!-- Income array-->
+            <ul id="income-list" class="list"></ul>
         </div>
 
         <!-- Expense List Section -->
         <div>
             <h3>Expense</h3>
-            <div>P2000</div>
+            <div id="expense-total">Total: 0</div>
+            <!-- Expense array-->
+            <ul id="expense-list" class="list"></ul>
         </div>
 
         <!-- Total Balance Section -->
         <h3>Balance</h3>
-        <div>+P1000</div>
+        <div id="total-balance">0</div>
 
         <!-- Expense & Income buttons Section -->
-        <button>+ Expense</button>
-        <button>+ Income</button>
+        <button id="expense-btn" class="p-3 border cursor-pointer">
+            + Expense
+        </button>
+        <button id="income-btn" class="p-3 border cursor-pointer">
+            + Income
+        </button>
         <!-- Transaction Section -->
 
         <!-- Graph Section -->
+
+        <!-- Modal -->
+        <div id="modal-common" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h5 class="modal-text">Expense / Income</h3>
+                <form>
+                    <div>
+                        <label for="name">Name</label><br>
+                        <input id="name" type="text" class="border" required>
+                    </div>
+                    <div>
+                        <label for="amount">Amount</label><br>
+                        <input id="amount" type="number" class="border" required>
+                    </div>
+
+                    <input id="submit-btn" type="submit" value="Submit" class="border p-3 cursor-pointer !mt-5 inline-block">
+                </form>
+              
+            </div>
+        </div>
+
+        <script src="modal.js"></script>
     </body>
 </html>
