@@ -12,6 +12,8 @@ const incomeTotal = document.querySelector("#income-total")
 
 const totalBalanceText = document.querySelector("#total-balance")
 
+const modalForm = document.querySelector("#modal-form")
+
 const closeBtnModal = document.querySelector("span.close");
 
 let expenseArray = []
@@ -22,13 +24,14 @@ let totalExpense = 0;
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeModal()
   }
 }
 
 // Reusable Functions
 const closeModal = () => {
     modal.style.display = 'none'
+    modalForm.reset()
 }
 
 const openModal = (type) => {
@@ -96,8 +99,7 @@ form.addEventListener("submit", function (e) {
   totalBalanceText.textContent  = `${totalBalanceIcon(totalBalance)} ${Math.abs(totalBalance)}`
 
   // Optionally: clear inputs or close modal
-  e.target.reset();
-  document.querySelector("#modal-common").style.display = "none";
+  closeModal()
 });
 
 // Open modal
